@@ -7,7 +7,7 @@ import java.util.*;
 
 @Slf4j
 @Repository
-public class MemverRepository {
+public class MemberRepository {
 
     private static Map<Long, Member> store = new HashMap<>();
     private static long seq = 0L;

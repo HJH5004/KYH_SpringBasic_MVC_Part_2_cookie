@@ -2,10 +2,9 @@ package hello.login.web.member;
 
 
 import hello.login.domain.member.Member;
-import hello.login.domain.member.MemverRepository;
+import hello.login.domain.member.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -19,7 +18,7 @@ import javax.validation.Valid;
 @RequestMapping("/members")
 public class MemberController {
 
-    private final MemverRepository memverRepository;
+    private final MemberRepository memberRepository;
 
 
     @GetMapping("/add")
@@ -34,7 +33,7 @@ public class MemberController {
             return "members/addMemberForm";
         }
 
-        memverRepository.save(member);
+        memberRepository.save(member);
 
         return "redirect:/";
     }

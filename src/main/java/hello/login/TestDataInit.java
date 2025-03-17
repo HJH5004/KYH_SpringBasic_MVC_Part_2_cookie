@@ -3,7 +3,7 @@ package hello.login;
 import hello.login.domain.item.Item;
 import hello.login.domain.item.ItemRepository;
 import hello.login.domain.member.Member;
-import hello.login.domain.member.MemverRepository;
+import hello.login.domain.member.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -14,7 +14,7 @@ import javax.annotation.PostConstruct;
 public class TestDataInit {
 
     private final ItemRepository itemRepository;
-    private final MemverRepository memverRepository;
+    private final MemberRepository memberRepository;
 
     /**
      * 테스트용 데이터 추가
@@ -31,7 +31,7 @@ public class TestDataInit {
         member.setName("홍이름");
 
 
-        memverRepository.save(member);
+        memberRepository.save(member);
     }
 
 }
