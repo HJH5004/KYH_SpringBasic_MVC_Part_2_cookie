@@ -31,6 +31,11 @@ public class SessionManagerTest {
         Object result = sessionManager.getSession(request);
         Assertions.assertThat(result).isEqualTo(member);
 
+        //세션 만료
+        sessionManager.expire(request);
+        Object session = sessionManager.getSession(request);
+        Assertions.assertThat(session).isNull();
+
     }
 
 }
